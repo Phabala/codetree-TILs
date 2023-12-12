@@ -10,7 +10,7 @@ public class Main {
         int sum = 0;
 
         for (int i = a; i <= b; i++) {
-            if (a % 6 == 0 && b % 8 != 0) {
+            if (i % 6 == 0 && i % 8 != 0) {
                 sum += i;
             }
         }
