@@ -7,7 +7,7 @@ public class Main {
         int n = sc.nextInt();
 
         for (int i = 1; i <= 5000; i++) {
-            if ((n /= i) < 1) {
+            if ((n /= i) <= 1) {
                 System.out.print(i);
                 break;
             }
