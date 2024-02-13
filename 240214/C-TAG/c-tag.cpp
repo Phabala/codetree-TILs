@@ -6,12 +6,12 @@
 using namespace std;
 
 int								N, M;
-char							group_a[500][50];
-char							group_b[500][50];
+char							group_a[500][51];
+char							group_b[500][51];
 vector<unordered_set<string>>	v_us_a;
 vector<unordered_set<string>>	v_us_b;
 
-void	char_input(char group_x[][50])
+void	char_input(char group_x[][51])
 {
 	for (int i = 0; i < N; i++)
 	{
@@ -83,7 +83,7 @@ int	main(void)
 	int	ans;
 
 	// input & reset
-	//freopen_s(new FILE*, "input.txt", "r", stdin);
+	// freopen_s(new FILE*, "input.txt", "r", stdin);
 	cin >> N >> M;
 	char_input(group_a);
 	char_input(group_b);
@@ -103,3 +103,12 @@ int	main(void)
 	cout << ans;
 	return (0);
 }
+
+/**
+* 64가지 조합이 있으며 각각의 위치에 (i, j, k 순서에 맞게) 조합을 unordered_set 
+* 해둔 다음, B 그룹에서도 unordered_set 해두고, 각각의 index 마다 같은게 있는지 
+* 찾는다.
+* 50 * 50 * 50 + 50 * 50 * 50 + 500 * 500 * 50 = 12,750,000
+* 각각 조합이 64개니까 하나의 조합을 비트로 만들어 64비트로 만든 다음 & 연산해서
+* 계산하면 10,000,000 번 정도 시간을 줄일 수 있다.
+*/
