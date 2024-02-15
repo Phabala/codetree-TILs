@@ -4,7 +4,6 @@ using namespace std;
 
 int N; // 1 ~ 100,000
 int G; // 2 ~ 250,000
-int flag;
 unordered_set<int> s;
 
 void    one_group()
@@ -19,11 +18,6 @@ void    one_group()
     {
         int tmp;
         cin >> tmp;
-        if (!flag)
-        {
-            s.insert(tmp);
-            flag = 1;
-        }
         if (s.find(tmp) == s.end())
             candidate = tmp;
         else
@@ -39,6 +33,7 @@ int main() {
     cin >> N >> G;
 
     // solve
+    s.insert(1);
     for (int g = 0; g < G; g++)
         one_group();
 
