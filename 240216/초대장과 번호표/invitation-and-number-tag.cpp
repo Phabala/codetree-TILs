@@ -4,21 +4,26 @@ using namespace std;
 
 int N; // 1 ~ 100,000
 int G; // 2 ~ 250,000
+int flag;
 unordered_set<int> s;
 
 void    one_group()
 {
     int num;
     int first;
-    int cnt = 1;
+    int cnt = 0;
     int candidate;
 
-    cin >> num >> first;
-    s.insert(first);
-    for (int i = 1; i < num; i++)
+    cin >> num;
+    for (int i = 0; i < num; i++)
     {
         int tmp;
         cin >> tmp;
+        if (!flag)
+        {
+            s.insert(tmp);
+            flag = 1;
+        }
         if (s.find(tmp) == s.end())
             candidate = tmp;
         else
