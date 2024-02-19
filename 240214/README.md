@@ -12,7 +12,7 @@
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
-|[Intermediate Mid / 중급 자료구조 / HashSet](https://www.codetree.ai/missions?missionId=8)|[[연습]C-TAG](https://www.codetree.ai/missions/8/problems/c-tag)|![보통][medium]|![Failed][failed]|[링크](https://github.com/Phabala/codetree-TILs/blob/main/240214/C-TAG/c-tag.cpp)|
+|[Intermediate Mid / 중급 자료구조 / HashSet](https://www.codetree.ai/missions?missionId=8)|[[연습]C-TAG](https://www.codetree.ai/missions/8/problems/c-tag)|![보통][medium]|![Passed][passed]|[링크](https://github.com/Phabala/codetree-TILs/blob/main/240214/C-TAG/c-tag.cpp)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
