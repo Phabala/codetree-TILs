@@ -9,12 +9,16 @@ int main() {
     set<int> s;
 
     cin >> N >> M;
+    for (int i = 1; i <= M; i++)
+        s.insert(-i);
     for (int i = 0; i < N; i++) {
         int num;
+
         cin >> num;
-        s.insert(num);
+        if (s.lower_bound(-num) != s.end())
+            s.erase(*s.lower_bound(-num));
     }
 
-    cout << s.size();
+    cout << M - s.size();
     return 0;
 }
