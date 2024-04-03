@@ -30,7 +30,7 @@ int main() {
             MIN = num - *before;
         if (here != rbeg && (*after - num) < MIN)
             MIN = *after - num;
-        cout << MIN << ' ';
+        cout << MIN << '\n';
     }
 
     
