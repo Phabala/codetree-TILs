@@ -15,6 +15,6 @@ int main() {
         s.insert(num);
     }
 
-    cout << *s.end();
+    cout << s.size();
     return 0;
 }
