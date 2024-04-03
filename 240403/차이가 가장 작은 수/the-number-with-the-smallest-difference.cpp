@@ -20,17 +20,9 @@ int main() {
         pos_s.insert(num);
         neg_s.insert(-num);
         if (pos_s.lower_bound(num + M) != pos_s.end())
-        {
             MIN = min(MIN, *pos_s.lower_bound(num + M) - num);
-            // cout << "D: num, *pos_s.lower_bound(num + M)| " << num << ' ' << *pos_s.lower_bound(num + M) << '\n';
-        }
-            
         if (neg_s.lower_bound(-num + M) != neg_s.end())
-        {
             MIN = min(MIN, *neg_s.lower_bound(-num + M) + num);
-            // cout << "D: num, *neg_s.lower_bound(-num + M)| " << num << ' ' << *neg_s.lower_bound(-num + M) << '\n';
-        }
-            
     }
 
     if (MIN == 21e8)
