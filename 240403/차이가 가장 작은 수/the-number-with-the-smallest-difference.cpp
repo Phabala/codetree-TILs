@@ -33,6 +33,9 @@ int main() {
             
     }
 
-    cout << MIN;
+    if (MIN == 21e8)
+        cout << -1;
+    else
+        cout << MIN;
     return 0;
 }
