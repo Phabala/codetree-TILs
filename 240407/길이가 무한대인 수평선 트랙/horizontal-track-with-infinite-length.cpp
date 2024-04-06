@@ -42,11 +42,3 @@ int main() {
     cout << aft;
     return 0;
 }
-
-/**
-0에 가까이 위치해 있는 한명을 A라고 하고 그 뒤에 있는 사람들을 B, C, D... 라고 했을 때
-B, C, D 중에서 A의 (위치+속력) 값보다 (위치+속력) 값이 작거나 같 사람들은 1분 뒤에 한 그룹이 된다.
-
-if (A.speed > B.speed) -> if (A.speed - B.speed) * T >= B.position - A.position
--> 한 그룹이 됨 (A를 지움)
-*/
