@@ -9,6 +9,7 @@ int N, T;
 set<pair<ull, ull>> s; // 위치, 속력
 
 int main() {
+    // freopen_s(new FILE*, "input.txt", "r", stdin);
     cin >> N >> T;
 
     ull position, speed;
@@ -17,19 +18,28 @@ int main() {
         s.insert(make_pair(position, speed));
     }
 
-    set<pair<ull, ull>>::iterator it;    
-    it = s.begin();
-    while(true) {
-        pair<ull, ull> pre, suf;
-        pre = *(it++);
-        if (it == s.end())
-            break ;
-        suf = *it;
-        if (pre.second > suf.second && 
-            ((pre.second - suf.second) * T) >= (suf.first - pre.first))
-            s.erase(pre);
+    set<pair<ull, ull>>::iterator it;
+    int bef, aft;
+    bef = -21e8;
+    aft = 0;
+    while (bef != aft) {
+        it = s.begin();
+        while (true) {
+            pair<ull, ull> pre, suf;
+            pre = *(it++);
+            if (it == s.end())
+                break;
+            suf = *it;
+            if (pre.first + pre.second * T >= suf.first + suf.second * T) {
+                s.erase(pre);
+                it = s.find(suf);
+            }
+        }
+        bef = aft;
+        aft = s.size();
     }
-    cout << s.size();
+    
+    cout << aft;
     return 0;
 }
 
