@@ -6,14 +6,13 @@ using namespace std;
 
 struct compare {
     bool operator()(pair<int, int> left, pair<int, int> right) {
-        if (left.first * left.second > right.first * right.second)
+        if (left.first + left.second > right.first + right.second)
             return true;
-        else if (left.first > right.first)
+        if (left.first > right.first)
             return true;
-        else if (left.second > right.second)
+        if (left.second > right.second)
             return true;
-        else
-            return false;
+        return false;
     }
 };
 
@@ -33,7 +32,9 @@ int main() {
     for (int i = 0; i < M; i++) {
         pair<int, int> top;
         top = pq.top();
+        cout << "D: " << top.first << ' ' << top.second << '\n';
         pq.pop();
+        cout << "D2: " << pq.top().first << ' ' << pq.top().second << '\n';
         pq.push(make_pair(top.first + 2, top.second + 2));
     }
 
