@@ -6,18 +6,12 @@ using namespace std;
 
 struct compare {
     bool operator()(pair<int, int> left, pair<int, int> right) {
-        if (left.first + left.second > right.first + right.second)
-            return true;
-        else if (left.first + left.second < right.first + right.second)
-            return false;
-        else if (left.first > right.first)
-            return true;
-        else if (left.first < right.first)
-            return false;
-        else if (left.second > right.second)
-            return true;
-        else if (left.second < right.second)
-            return false;
+        if (left.first + left.second != right.first + right.second)
+            return left.first + left.second > right.first + right.second;
+        else if (left.first != right.first)
+            return left.first > right.first;
+        else if (left.second != right.second)
+            return left.second > right.second;
         else
             return false;
     }
