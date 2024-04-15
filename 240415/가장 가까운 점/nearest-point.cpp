@@ -8,11 +8,18 @@ struct compare {
     bool operator()(pair<int, int> left, pair<int, int> right) {
         if (left.first + left.second > right.first + right.second)
             return true;
-        if (left.first > right.first)
+        else if (left.first + left.second < right.first + right.second)
+            return false;
+        else if (left.first > right.first)
             return true;
-        if (left.second > right.second)
+        else if (left.first < right.first)
+            return false;
+        else if (left.second > right.second)
             return true;
-        return false;
+        else if (left.second < right.second)
+            return false;
+        else
+            return false;
     }
 };
 
@@ -32,9 +39,7 @@ int main() {
     for (int i = 0; i < M; i++) {
         pair<int, int> top;
         top = pq.top();
-        cout << "D: " << top.first << ' ' << top.second << '\n';
         pq.pop();
-        cout << "D2: " << pq.top().first << ' ' << pq.top().second << '\n';
         pq.push(make_pair(top.first + 2, top.second + 2));
     }
 
