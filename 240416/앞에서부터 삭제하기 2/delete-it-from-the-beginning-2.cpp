@@ -8,7 +8,7 @@ using namespace std;
 vector<int> v; // 순서 저장용
 priority_queue<int, vector<int>, greater<int> > pq; // 최소값 O(logN)으로 찾기용
 unordered_map<int, int> um; // 값, 개수
-
+/* 일단은 시간초과인 상태로 마무리 */
 int N;
 
 int main() {
