@@ -5,7 +5,7 @@
 using namespace std;
 
 int N;
-priority_queue<pair<int, int>> pq; // 값, isNegative
+priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > pq; // 값, sign
 
 int main() {
     cin >> N;
@@ -16,23 +16,18 @@ int main() {
         {
             if (pq.empty())
                 cout << 0 << '\n';
-            else if (pq.top().second == 0)
-            {
-                cout << pq.top().first << '\n';
-                pq.pop();
-            }
             else
             {
-                cout << pq.top().first * -1 << '\n';
+                cout << pq.top().first * pq.top().second << '\n';
                 pq.pop();
             }
         }
         else
         {
             if (num < 0)
-                pq.push(make_pair(-num, 1));
+                pq.push(make_pair(-num, -1));
             else
-                pq.push(make_pair(num, 0));
+                pq.push(make_pair(num, 1));
         }
     }
     return 0;
