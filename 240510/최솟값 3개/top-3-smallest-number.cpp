@@ -23,7 +23,7 @@ int main() {
             pq.pop();
             b = pq.top();
             pq.pop();
-            cout << a * b * pq.top() << '\n';
+            cout << (unsigned long long int)a * b * pq.top() << '\n';
             pq.push(b);
             pq.push(a);
         }
