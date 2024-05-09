@@ -51,7 +51,7 @@ void	solve()
 
 int main()
 {
-	freopen_s(new FILE*, "input.txt", "r", stdin);
+	// freopen_s(new FILE*, "input.txt", "r", stdin);
 	input();
 	solve();
 }
