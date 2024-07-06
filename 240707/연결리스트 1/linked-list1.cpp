@@ -79,9 +79,9 @@ int main() {
             Node *new_n = new Node(s_val);
             insert_next(cur, new_n);
         }
-        else if (cmd == 3)
+        else if (cmd == 3 && cur->prev)
             cur = cur->prev;
-        else if (cmd == 4)
+        else if (cmd == 4 && cur->next)
             cur = cur->next;
         ft_print(cur);
     }
