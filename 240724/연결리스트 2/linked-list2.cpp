@@ -44,7 +44,7 @@ void    pop(int i)
     else if (node->next)
     {
         node->next->prev = nullptr;
-        node->prev = nullptr;
+        node->next = nullptr;
     }
 }
 
